@@ -1,0 +1,36 @@
+{
+  "name": "challenge_1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "bd": "webpack-cli --watch",
+    "start": "node server",
+    "dev": "nodemon server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Carlitos Willis",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-react": "^7.10.1",
+    "babel-loader": "^8.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-plugin-import": "^2.21.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^2.5.0",
+    "nodemon": "^2.0.4",
+    "webpack": "^4.43.0"
+  },
+  "dependencies": {
+    "json-server": "^0.16.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-paginate": "^6.3.2",
+    "webpack-cli": "^3.3.11"
+  }
+}
