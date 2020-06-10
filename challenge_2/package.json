@@ -2,9 +2,9 @@
   "name": "challenge_2",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "server",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "nodemon server",
     "build": "webpack",
     "bd": "webpack-cli --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
