@@ -14,7 +14,7 @@ body, h1, h2, h3, h4, h5, h6, p, ol, ul {
 }
 
 body {
-  background: palevioletred;
+  background: white;
 }
 
 ol, ul {
@@ -26,7 +26,6 @@ ul {
   align-items: stretch; /* Default */
   justify-content: space-between;
   width: 100%;
-  background: #cacaca;
   margin: 0;
   padding: 0;
 }
@@ -34,7 +33,8 @@ li {
   display: block;
   flex: 0 1 auto; /* Default */
   list-style-type: none;
-  background: #fafafa;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 img {
@@ -42,13 +42,16 @@ img {
   height: auto;
 }
 
-.paginate {
-  /* display: inline-block; */
-  display: flex;
-  align-items: stretch; /* Default */
-  justify-content: space-between;
-  width: 100%;
-  background: #cacaca;
-  margin: 0;
-  padding: 0;
+.entryProperties {
+  all: none;
+}
+
+li.entryProperties {
+  display: inline-block;
+  background-color: blue;
+}
+
+.entryProperty {
+  display: grid;
+
 }

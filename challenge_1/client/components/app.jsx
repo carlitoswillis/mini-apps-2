@@ -1,40 +1,40 @@
 import React from 'react';
 import ReactPaginate from 'react-paginate';
+import Results from './results';
 
 const $ = require('jquery');
 const styles = require('../styles.css');
+
 class App extends React.Component {
   constructor(props) {
     super(props);
-    const { url } = this.props;
+    const { url, perPage } = this.props;
     this.state = {
       url,
       data: [],
-      offset: 0,
       page: 0,
-      limit: 20,
+      perPage,
     };
   }
 
   componentDidMount() {
     this.loadDateFromServer();
-    console.log('huh');
-
   }
 
   loadDateFromServer() {
     const {
-      url, perPage, page, limit,
+      url, page, query, perPage,
     } = this.state;
     $.ajax({
-      url: `${url}?_page=${page + 1}&_limit=${limit}`,
+      url: `${url}?_page=${page + 1}&_limit=${perPage}`.concat(`${query ? `&q=${query}` : ''}`),
       type: 'GET',
       success: (data, textStatus, request) => {
         this.setState({
           data,
-          pageCount: Math.ceil(request.getResponseHeader('X-Total-Count') / 20),
+          pageCount: Math.ceil(request.getResponseHeader('X-Total-Count') / perPage),
         }, () => {
-          console.log(`${url}?_page=${page + 1}&_limit=${limit}`);
+          document.getElementById('query').value = '';
+          this.setState({ query: undefined });
         });
       },
       error: (xhr, status, err) => {
@@ -50,16 +50,33 @@ class App extends React.Component {
     });
   }
 
+  handleKeyPress(e) {
+    let { query } = this.state;
+    query = query === undefined
+      ? ''
+      : query;
+    if (e.key === 'Enter') {
+      this.loadDateFromServer();
+    } else {
+      this.setState({
+        query: query + e.key,
+      });
+    }
+  }
+
   render() {
+    const { pageCount, data } = this.state;
     return (
       <div>
+        <input id="query" onKeyPress={this.handleKeyPress.bind(this)} placeholder="search for something" />
+        <Results results={data} />
         <ReactPaginate
           className={styles.paginate}
           previousLabel="previous"
           nextLabel="next"
           breakLabel="..."
           breakClassName="break-me"
-          pageCount={this.state.pageCount}
+          pageCount={pageCount}
           marginPagesDisplayed={2}
           pageRangeDisplayed={5}
           onPageChange={this.handlePageClick.bind(this)}

@@ -5,4 +5,4 @@ import App from './components/app';
 const styles = require('./styles.css');
 console.log('huh', styles.paginate);
 
-ReactDOM.render(<App url="/events" perPage={20} />, document.getElementById('app'));
+ReactDOM.render(<App url="/events" perPage={8} />, document.getElementById('app'));
