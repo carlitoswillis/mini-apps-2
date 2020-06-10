@@ -21,7 +21,24 @@ ol, ul {
   list-style: none;
 }
 
-ul {
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.entryPropertiesLi {
+  list-style-type: none;
+}
+
+.entryProperties {
+  display: inline-block;
+  background-color: rgb(189, 241, 250);
+  border-radius: 3px;
+  margin: 20px;
+  padding: 30px
+}
+
+.pagination {
   display: flex;
   align-items: stretch; /* Default */
   justify-content: space-between;
@@ -29,29 +46,11 @@ ul {
   margin: 0;
   padding: 0;
 }
-li {
+
+.pagespagination {
   display: block;
   flex: 0 1 auto; /* Default */
   list-style-type: none;
   margin-left: 10px;
   margin-right: 10px;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-.entryProperties {
-  all: none;
-}
-
-li.entryProperties {
-  display: inline-block;
-  background-color: blue;
-}
-
-.entryProperty {
-  display: grid;
-
 }

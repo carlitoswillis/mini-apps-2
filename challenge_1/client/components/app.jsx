@@ -3,7 +3,6 @@ import ReactPaginate from 'react-paginate';
 import Results from './results';
 
 const $ = require('jquery');
-const styles = require('../styles.css');
 
 class App extends React.Component {
   constructor(props) {
@@ -71,7 +70,6 @@ class App extends React.Component {
         <input id="query" onKeyPress={this.handleKeyPress.bind(this)} placeholder="search for something" />
         <Results results={data} />
         <ReactPaginate
-          className={styles.paginate}
           previousLabel="previous"
           nextLabel="next"
           breakLabel="..."
@@ -81,7 +79,7 @@ class App extends React.Component {
           pageRangeDisplayed={5}
           onPageChange={this.handlePageClick.bind(this)}
           containerClassName="pagination"
-          subContainerClassName="pages pagination"
+          subContainerClassName="pagespagination"
           activeClassName="active"
         />
       </div>
