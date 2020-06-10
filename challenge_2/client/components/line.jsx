@@ -24,13 +24,12 @@ const data = {
   ],
 };
 
-class Sc extends React.Component {
+class Ln extends React.Component {
   constructor(props) {
     super(props);
     const { btc } = this.props;
     data.datasets[0].data = Object.values(btc);
     data.labels = Object.keys(btc);
-    console.log(data);
     this.state = { data };
   }
 
@@ -44,4 +43,4 @@ class Sc extends React.Component {
   }
 }
 
-export default Sc;
+export default Ln;

@@ -1,5 +1,5 @@
 import React from 'react';
-import Sc from './scatter';
+import Ln from './line';
 
 class App extends React.Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class App extends React.Component {
   render() {
     const { btc } = this.state;
     return (
-      <Sc btc={btc} />
+      <Ln btc={btc} />
     );
   }
 }
