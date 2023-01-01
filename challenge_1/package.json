@@ -16,8 +16,8 @@
     "@babel/core": "^7.10.2",
     "@babel/preset-env": "^7.10.2",
     "@babel/preset-react": "^7.10.1",
-    "babel-loader": "^8.1.0",
-    "css-loader": "^3.5.3",
+    "babel-loader": "^8.3.0",
+    "css-loader": "^6.7.3",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-plugin-import": "^2.21.1",
@@ -25,7 +25,7 @@
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^2.5.0",
     "nodemon": "^2.0.4",
-    "webpack": "^4.43.0"
+    "webpack": "^5.75.0"
   },
   "dependencies": {
     "jquery": "^3.5.1",
@@ -35,6 +35,6 @@
     "react-dom": "^16.13.1",
     "react-paginate": "^6.3.2",
     "style-loader": "^1.2.1",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^5.0.1"
   }
 }
